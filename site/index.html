@@ -1,13 +1,151 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js">console.log($())</script>
-    
-    <title>JStuff</title>
-  </head>
-  <body>
-    <div = "header">
+    <title>jQuery Practice</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
 
+       alert('Howdy, you are now working with jQuery!');
+          $('click').click(function(){
+            alert();
+          });
+          $( "#hider" ).click(function() {
+            $("p").hide();
+          });
+
+         $("#show").click(function() {
+            $("p").show();
+          });
+          $("#toggle").click(function() {
+            $("#cat").toggle();
+          });
+          $('#btn1').click(function(){
+            $('.bunny').append('<b>Appends text</b>');
+          });
+          $("#btn2").click(function(){
+            $("ol").append("<li>Appended item</li>");
+          });
+          $("#slideup").click(function(){
+            $("h2").slideUp("slow", function(){
+            });
+          });
+          $("#slidedown").click(function(){
+           $("h2").slideDown("slow", function(){
+           });
+          });
+          $("button").click(function(){
+            $("p").slideToggle();
+          });
+          $(".btn1").click(function(){
+            $("p").fadeOut()
+          });
+          $(".btn2").click(function(){
+            $("p").fadeIn();
+          });
+          $("button").click(function(){
+            $("p:first").addClass("intro");
+          });
+          $("button").click(function(){
+            $("p").before("<p>Hello world!</p>");
+          });
+          $("button").click(function(){
+            $("p").after("<p>Hello world!</p>");
+          });
+          $("button").click(function(){
+            $("p").append("<b>Appended text</b>");
+          });
+          $("button").click(function(){
+            $("img").attr("width", "500");
+          });
+          $("button").click(function(){
+            $("input:text").val("Glenn Quagmire");
+          });
+          $("button").click(function(){
+            $("p").text("Hello world!");
+          });
+          $("#btn1").click(function(){
+            $("div").data("greeting", "Hello World");
+          });
+          $("#btn2").click(function(){
+            alert($("div").data("greeting"));
+          });
+          $("#btn1").click(function(){
+            $("div").data("greeting", "Hello World");
+          });
+          $("#btn2").click(function(){
+            alert($("div").data("greeting"));
+          });
+        });
+        </script>
+      <style>
+      .intro{
+        font-size: 150%;
+        color: red;
+      }
+      </style>
+</head>
+<body>
+      <h1>.Hide and .Show Function</h1>
+      <div>
+        <p>This is a sentence</p>
+
+       <p> This is also a sentence!</p>
+      <p> Click on the button below to hide text</p>
+      <button id="hider"> Click to hide text</button>
+      <button id="show"> Click to show text</button>
+      <hr>
+      <h1>.Click Function</h1>
+      <button class="click"> Click</button>
+      <hr>
+      <h1>.append Function</h1>
+      <p class="bunny">This is a paragraph.</p>
+      <p class="bunny">This is another paragraph.</p>
+
+     <ol>
+        <li>List item 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+      </ol>
+      <button id="btn1">Append text</button>
+      <button id="btn2">Append list item</button>
+      <hr>
+      <h2> Slide text up and down.</h2>
+      <button id="slideup">slide up</button>
+      <button id = "slidedown"> slide down</button>
+      <hr>
+      <p>This is a paragraph.</p>
+      <button>Toggle slideUp() and slideDown()</button>
+      <hr>
+      <p>This is a paragraph.</p>
+      <button class="btn1">Fade out</button>
+      <button class="btn2">Fade in</button>
+      <hr>
+      <h1>This is a heading</h1>
+      <p>This is a paragraph.</p>
+      <p>This is another paragraph.</p>
+      <button>Add a class name to the first p element</button>
+      <hr>
+      <button>Insert content before each p element</button>
+      <p>This is a paragraph.</p>
+      <p>This is a paragraph.</p>
+      <hr>
+      <button>Insert content after each p element</button>
+      <p>This is a paragraph.</p>
+      <p>This is another paragraph.</p>
+      <hr>
+      <img src="img_pulpitrock.jpg" alt="Pulpit Rock" width="284" height="213"><br>
+      <button>Set the width attribute of the image</button>
+      <hr>
+      <p>Name: <input type="text" name="user"></p>
+      <button>Set the value of the input field</button>
+      <hr>
+      <button>Set text content for all p elements</button>
+      <p>This is a paragraph.</p>
+      <p>This is another paragraph.</p>
+      <hr>
+      <button id="btn1">Attach data to div element</button><br>
+      <button id="btn2">Get data attached to div element</button>
+    </div>
   </body>
-</html>
